@@ -153,9 +153,9 @@ const models = [
 
 const faqs = [
   {
-    q: "RGEO Labs는 어떤 회사인가요?",
+    q: "RGEO Labs(알지오랩스)는 어떤 회사인가요?",
     a:
-      "RGEO Labs는 개발자 채용 없이 웹·앱·AI 서비스를 시작할 수 있도록 돕는 AI 시대의 기술 운영 파트너입니다. " +
+      "RGEO Labs(알지오랩스)는 개발자 채용 없이 웹·앱·AI 서비스를 시작할 수 있도록 돕는 AI 시대의 기술 운영 파트너입니다. " +
       "기술 투자, 개발 투자, 월 구독형 개발 구조를 기반으로 초기 서비스 출시의 문턱을 낮추고 빠른 MVP 검증이 가능하도록 설계합니다. " +
       "웹사이트 제작, 앱 개발, 유지보수, AI 자동화, GEO·SEO 최적화까지 하나의 팀으로 함께하며, 단순 제작보다 출시 이후 운영과 AI 검색 노출 구조까지 함께 고려합니다. " +
       "또한 ChatGPT, Google, Perplexity 같은 AI 검색 환경에서 브랜드와 서비스가 더 잘 이해되고 발견될 수 있도록 구조화된 개발 방식을 지향합니다."
@@ -246,33 +246,137 @@ const FAQ_JSONLD = {
   })),
 };
 
+
+
 const SERVICE_JSONLD = {
   "@context": "https://schema.org",
   "@type": "Service",
-  serviceType: "월 구독형 외주개발운영 파트너 서비스",
-  provider: { "@type": "Organization", name: "RGEO Labs", email: "hello@rgeo.ai" },
+
+  name: "RGEO Labs",
+  alternateName: "알지오랩스",
+
+  serviceType: "월 구독형 개발·운영 파트너",
+
+  provider: {
+    "@type": "Organization",
+    name: "RGEO Labs",
+    alternateName: "알지오랩스",
+    url: "https://rgeo.ai",
+    email: "hello@rgeo.ai"
+  },
+
   areaServed: "KR",
-  description: "AI 시대 운영 파트너. 초기 비용 0원부터 시작 가능한 월 구독형. 웹·앱·MVP 개발과 GEO·SEO 최적화를 한 팀이 동시에 설계합니다.",
-  offers: { "@type": "Offer", priceCurrency: "KRW", price: "0", description: "무료개발 · 초기 비용 0원 가능 · 기술투자형 협의" },
+
+  description:
+    "RGEO Labs(알지오랩스)는 개발자 채용 없이 웹·앱·AI 서비스를 시작할 수 있도록 돕는 AI 시대의 기술 운영 파트너입니다. " +
+    "웹·앱·MVP 개발부터 유지보수, AI 자동화, GEO·SEO 구조 설계까지 하나의 팀이 함께합니다. " +
+    "초기 구축 비용 부담을 낮춘 월 구독형 개발 구조와 기술 투자형 협업도 제공합니다. " +
+    "또한 AI 검색 환경에서도 발견될 수 있도록 구조화 데이터와 GEO 기반으로 설계합니다.",
+
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "KRW",
+    availability: "https://schema.org/InStock",
+    description:
+      "월 구독형 개발·운영 구조 · 초기 비용 부담 완화 · 기술 투자형 협업 가능"
+  }
 };
+
+
+const ORG_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+
+  name: "RGEO Labs",
+  alternateName: "알지오랩스",
+
+  url: "https://rgeo.ai",
+
+  logo: "https://rgeo.ai/og.jpg",
+
+  description:
+    "RGEO Labs(알지오랩스)는 AI 시대의 기술 운영 파트너입니다."
+};
+
+
+
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "RGEO Labs — AI 시대 운영 파트너. 초기 비용 0원, 월 구독형 외주개발 서비스" },
-      { name: "description", content: "개발자 채용 대신 월 구독으로. 웹·앱·MVP 개발과 GEO·SEO 최적화를 한 팀이 동시에 설계하는 기술 투자 동반자, RGEO Labs." },
-      { property: "og:title", content: "RGEO Labs — 초기 비용 0원, 월 구독형 외주개발" },
-      { property: "og:description", content: "개발자 채용 대신 월 구독으로. 웹·앱·MVP·GEO·SEO를 한 팀이 동시에." },
-      { property: "og:url", content: "/" },
+      {
+        title:
+          "RGEO Labs(알지오랩스) — AI 시대 기술 운영 파트너"
+      },
+
+      {
+        name: "description",
+        content:
+          "RGEO Labs(알지오랩스)는 개발자 채용 없이 웹·앱·MVP 개발, AI 자동화, 유지보수, GEO·SEO 최적화를 함께 제공하는 월 구독형 기술 운영 파트너입니다."
+      },
+
+      {
+        property: "og:title",
+        content:
+          "RGEO Labs(알지오랩스) — 월 구독형 개발·운영 파트너"
+      },
+
+      {
+        property: "og:description",
+        content:
+          "개발자 채용 대신 월 구독으로 웹·앱·MVP 개발부터 AI 자동화, GEO·SEO 구조 설계까지 한 팀이 함께합니다."
+      },
+
+      {
+        property: "og:image",
+        content: "https://rgeo.ai/og.jpg"
+      },
+
+      {
+        property: "og:url",
+        content: "https://rgeo.ai"
+      },
+
+      {
+        name: "robots",
+        content: "index,follow"
+      },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+
+    links: [
+      {
+        rel: "canonical",
+        href: "https://rgeo.ai"
+      }
+    ],
+
+
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(FAQ_JSONLD) },
-      { type: "application/ld+json", children: JSON.stringify(SERVICE_JSONLD) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(FAQ_JSONLD)
+      },
+
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(SERVICE_JSONLD)
+      },
+
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(ORG_JSONLD)
+      },
     ],
+
+
   }),
+
   component: RgeoLabsLanding,
 });
+
+
+
 
 /* ── HOOKS ── */
 function useInView(threshold = 0.1) {
