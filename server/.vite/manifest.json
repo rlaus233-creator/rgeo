@@ -1,0 +1,79 @@
+{
+  "C:/Users/a/Desktop/rgeo-builds-zero-main/src/styles.css": {
+    "file": "assets/styles-C-Uf7g31.css",
+    "src": "C:/Users/a/Desktop/rgeo-builds-zero-main/src/styles.css"
+  },
+  "_router-Bg660U1v.js": {
+    "file": "assets/router-Bg660U1v.js",
+    "name": "router",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-_vYhmSsb.js"
+    ],
+    "dynamicImports": [
+      "src/routes/index.tsx?tsr-split=component"
+    ],
+    "assets": [
+      "assets/styles-C-Uf7g31.css"
+    ]
+  },
+  "_server-_vYhmSsb.js": {
+    "file": "assets/server-_vYhmSsb.js",
+    "name": "server",
+    "isDynamicEntry": true,
+    "dynamicImports": [
+      "tanstack-start-manifest:v",
+      "_router-Bg660U1v.js",
+      "src/start.ts",
+      "node_modules/@tanstack/start-server-core/dist/esm/empty-plugin-adapters.js"
+    ]
+  },
+  "_worker-entry-Br3GJl6R.js": {
+    "file": "assets/worker-entry-Br3GJl6R.js",
+    "name": "worker-entry",
+    "dynamicImports": [
+      "_server-_vYhmSsb.js"
+    ]
+  },
+  "node_modules/@tanstack/start-server-core/dist/esm/empty-plugin-adapters.js": {
+    "file": "assets/empty-plugin-adapters-BFgPZ6_d.js",
+    "name": "empty-plugin-adapters",
+    "src": "node_modules/@tanstack/start-server-core/dist/esm/empty-plugin-adapters.js",
+    "isDynamicEntry": true
+  },
+  "src/routes/index.tsx?tsr-split=component": {
+    "file": "assets/index-B3rfuiES.js",
+    "name": "index",
+    "src": "src/routes/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-_vYhmSsb.js",
+      "_router-Bg660U1v.js"
+    ]
+  },
+  "src/start.ts": {
+    "file": "assets/start-Dg0rs1vn.js",
+    "name": "start",
+    "src": "src/start.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-_vYhmSsb.js",
+      "_worker-entry-Br3GJl6R.js"
+    ]
+  },
+  "tanstack-start-manifest:v": {
+    "file": "assets/_tanstack-start-manifest_v-7BPk5Mza.js",
+    "name": "_tanstack-start-manifest_v",
+    "src": "tanstack-start-manifest:v",
+    "isDynamicEntry": true
+  },
+  "virtual:cloudflare/worker-entry": {
+    "file": "index.js",
+    "name": "index",
+    "src": "virtual:cloudflare/worker-entry",
+    "isEntry": true,
+    "imports": [
+      "_worker-entry-Br3GJl6R.js"
+    ]
+  }
+}
