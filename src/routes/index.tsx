@@ -1459,13 +1459,100 @@ function RgeoLabsLanding() {
             ))}
           </div>
 
+          {/* 가격 힌트 */}
           <Reveal delay={0.24}>
-            <div style={{ marginTop: 18, padding: "18px 22px", borderRadius: 16, background: "rgba(255,255,255,.03)", border: "1px solid rgba(255,255,255,.07)", fontSize: 13, color: "rgba(255,255,255,.42)", lineHeight: 1.8 }}>
-              프로젝트 규모와 협업 구조에 따라 다르지만, 월 구독형은 보통 수백만 원대부터 설계합니다.
-              정확한 비용은 상담 후 범위와 우선순위에 맞춰 제안드립니다.
+            <div style={{ marginTop: 18, background: "rgba(126,236,212,.03)", border: "1px solid rgba(126,236,212,.12)", borderRadius: 20, padding: "32px 32px" }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: "#7eecd4", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 20 }}>Price Range</div>
+              <div className="col3" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14, marginBottom: 20 }}>
+                {[
+                  { range: "월 50만원~", label: "소규모 운영·유지보수", desc: "기능 추가·버그 수정·배포 등 운영 중심" },
+                  { range: "월 100~200만원", label: "MVP · 신규 서비스", desc: "핵심 기능 개발 + GEO·SEO 구조 포함" },
+                  { range: "월 200만원~", label: "풀스택 파트너십", desc: "웹·앱·자동화·운영 전담 기술팀 구조" },
+                ].map(({ range, label, desc }) => (
+                  <div key={label} style={{ padding: "22px 20px", borderRadius: 16, background: "rgba(255,255,255,.03)", border: "1px solid rgba(255,255,255,.07)" }}>
+                    <div style={{ fontSize: 20, fontWeight: 900, color: "#7eecd4", letterSpacing: "-.03em", marginBottom: 8 }}>{range}</div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "#f0ece8", marginBottom: 6 }}>{label}</div>
+                    <div style={{ fontSize: 12, color: "rgba(255,255,255,.35)", lineHeight: 1.65 }}>{desc}</div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ fontSize: 12, color: "rgba(255,255,255,.28)", lineHeight: 1.7 }}>
+                ※ 프로젝트 범위와 우선순위에 따라 달라집니다. 정확한 금액은 상담 후 제안드립니다.
+              </div>
             </div>
           </Reveal>
 
+          {/* 신뢰 지표 */}
+          <Reveal delay={0.3}>
+            <div style={{ marginTop: 14, display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }} className="col3">
+              {[
+                { value: "대기업 포함", label: "다수 기업 파트너십 운영 중", icon: "🏢" },
+                { value: "높은 재계약률", label: "평균 2~3개월 단위 지속 협업", icon: "🔁" },
+                { value: "즉시 시작", label: "상담 후 빠르면 1주 내 착수", icon: "⚡" },
+              ].map(({ value, label, icon }, i) => (
+                <div key={i} style={{ padding: "22px 20px", borderRadius: 16, background: "rgba(255,255,255,.03)", border: "1px solid rgba(255,255,255,.07)", display: "flex", alignItems: "center", gap: 14 }}>
+                  <div style={{ fontSize: 22, flexShrink: 0 }}>{icon}</div>
+                  <div>
+                    <div style={{ fontSize: 15, fontWeight: 800, color: "#f0ece8", marginBottom: 4 }}>{value}</div>
+                    <div style={{ fontSize: 12, color: "rgba(255,255,255,.35)", lineHeight: 1.5 }}>{label}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section style={{ padding: "100px 0", background: "linear-gradient(180deg,rgba(126,236,212,.02),transparent)" }}>
+        <div className="pad-s" style={W}>
+          <Reveal>
+            <span className="eyebrow">Voice</span>
+            <h2 style={{ fontSize: "clamp(26px,4vw,44px)", fontWeight: 880, letterSpacing: "-.04em", lineHeight: 1.1, color: "#f0ece8", marginBottom: 48 }}>
+              함께한 분들의 이야기
+            </h2>
+          </Reveal>
+          <div className="col3" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
+            {[
+              {
+                quote: "외주 두 번 날리고 포기하려다 맡겼는데, 2주 만에 실제로 돌아가는 MVP가 나왔어요. 이게 가능한 거였구나 싶었습니다.",
+                name: "스타트업 대표 A",
+                tag: "앱 서비스 MVP"
+              },
+              {
+                quote: "개발자 채용을 6개월 동안 못 하고 있었어요. 월 구독으로 전환하고 나서 속도가 완전히 달라졌습니다. 비용도 채용보다 훨씬 낮고요.",
+                name: "IT 서비스 운영사 B",
+                tag: "월 구독 파트너십"
+              },
+              {
+                quote: "AI 검색에서 우리 서비스가 언급되기 시작했어요. GEO 구조를 개발 단계부터 같이 잡아줘서 런칭하자마자 효과가 있었습니다.",
+                name: "이커머스 창업자 C",
+                tag: "GEO·SEO 최적화"
+              },
+            ].map(({ quote, name, tag }, i) => (
+              <Reveal key={i} delay={i * 0.08}>
+                <div className="card" style={{ padding: "28px 24px", height: "100%", display: "flex", flexDirection: "column" }}>
+                  <div style={{ fontSize: 28, color: "rgba(126,236,212,.25)", lineHeight: 1, marginBottom: 16, fontFamily: "Georgia, serif" }}>"</div>
+                  <p style={{ fontSize: 14, color: "rgba(255,255,255,.55)", lineHeight: 1.85, flex: 1, marginBottom: 24 }}>{quote}</p>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(126,236,212,.1)", border: "1px solid rgba(126,236,212,.2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, color: "#7eecd4", fontWeight: 800, flexShrink: 0 }}>
+                      {name.charAt(name.length - 1)}
+                    </div>
+                    <div>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: "#f0ece8" }}>{name}</div>
+                      <div style={{ fontSize: 11, color: "rgba(126,236,212,.6)", marginTop: 2 }}>{tag}</div>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={0.2}>
+            <div style={{ marginTop: 14, padding: "16px 22px", borderRadius: 14, background: "rgba(255,255,255,.02)", border: "1px solid rgba(255,255,255,.06)", fontSize: 12, color: "rgba(255,255,255,.22)", textAlign: "center" }}>
+              실제 협업 클라이언트의 익명 후기입니다. 상담 시 더 자세한 사례를 공유드립니다.
+            </div>
+          </Reveal>
         </div>
       </section>
 
