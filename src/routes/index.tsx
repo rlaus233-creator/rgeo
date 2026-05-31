@@ -1254,38 +1254,99 @@ function RgeoLabsLanding() {
         </div>
       </div>
 
+      {/* TARGETS */}
+      <section style={{ padding: "100px 0" }}>
+        <div className="pad-s" style={W}>
+          <Reveal>
+            <span className="eyebrow">For who</span>
+            <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 880, letterSpacing: "-.04em", lineHeight: 1.1, marginBottom: 14, color: "#f0ece8" }}>
+              개발자가 없어서,<br />개발비가 없어서<br />못 시작하고 있다면.
+            </h2>
+            <p style={{ fontSize: 16, color: "rgba(255,255,255,.36)", lineHeight: 1.8, maxWidth: 420, marginBottom: 48 }}>RGEO Labs는 이 두 가지 문제를 동시에 해결합니다.</p>
+          </Reveal>
+          <div className="col2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 16 }}>
+            {targets.map(({ icon, title, desc }, i) => (
+              <Reveal key={title} delay={i * 0.07}>
+                <div className="card" style={{ padding: "28px 24px", display: "flex", gap: 18, alignItems: "flex-start" }}>
+                  <div style={{ width: 42, height: 42, borderRadius: 11, background: "rgba(126,236,212,.07)", border: "1px solid rgba(126,236,212,.13)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 17, color: "rgba(126,236,212,.7)", flexShrink: 0 }}>{icon}</div>
+                  <div>
+                    <h3 style={{ fontSize: 15, fontWeight: 750, color: "#f0ece8", marginBottom: 7, lineHeight: 1.4 }}>{title}</h3>
+                    <p style={{ fontSize: 13, color: "rgba(255,255,255,.38)", lineHeight: 1.78 }}>{desc}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={0.2}>
+            <div style={{ background: "rgba(126,236,212,.03)", border: "1px solid rgba(126,236,212,.1)", borderRadius: 20, padding: "32px 32px" }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#7eecd4", letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 24 }}>개발자 채용 vs RGEO Labs 구독</div>
+              <div className="col2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
+                {[
+                  { label: "개발자 직접 채용", color: "rgba(255,255,255,.28)", accent: "rgba(239,68,68,.45)", icon: "✕", items: ["연봉 6,000~8,000만 원 + 4대보험", "장비·복지·퇴직금 추가 비용", "이직 리스크 · 채용 공백 기간", "채용에만 평균 4개월 소요", "한 명의 스택에 기술이 한정"] },
+                  { label: "RGEO Labs 구독", color: "#7eecd4", accent: "#7eecd4", icon: "✦", items: ["채용 대비 낮은 월 비용", "즉시 시작 · 공백 없음", "웹·앱·GEO·SEO 풀커버", "기술 방향 함께 설계", "장기 파트너십 구조"] },
+                ].map(({ label, color, accent, icon, items }) => (
+                  <div key={label}>
+                    <div style={{ fontSize: 13, fontWeight: 700, color, marginBottom: 14, letterSpacing: ".04em" }}>{label}</div>
+                    {items.map((t) => (
+                      <div key={t} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 13, color: "rgba(255,255,255,.42)", marginBottom: 9 }}>
+                        <span style={{ color: accent, fontSize: 10, flexShrink: 0, marginTop: 3 }}>{icon}</span>{t}
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <hr className="divider" />
+
       {/* VIBE CODING REALITY */}
       <section style={{ padding: "100px 0" }}>
         <div className="pad-s" style={W}>
           <Reveal>
             <span className="eyebrow">Reality Check</span>
-            <div className="col2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center" }}>
-              <div>
-                <h2 style={{ fontSize: "clamp(26px,4vw,44px)", fontWeight: 880, letterSpacing: "-.04em", lineHeight: 1.12, color: "#f0ece8", marginBottom: 18 }}>
-                  바이브 코딩으로<br />빠르게 만들었는데,<br /><span style={{ background: "linear-gradient(110deg,#f0ece8,#7eecd4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>그 다음이 문제입니다.</span>
-                </h2>
-                <p style={{ fontSize: 15, color: "rgba(255,255,255,.38)", lineHeight: 1.85, marginBottom: 32 }}>
-                  AI·노코드·바이브 코딩으로 MVP를 빠르게 만드는 건 이제 어렵지 않습니다. 하지만 실제 사용자가 붙고 나면 다른 문제가 시작됩니다.
-                </p>
-                <a href="#apply" className="btn-a" style={{ textDecoration: "none" }}>운영 구조 상담하기 →</a>
+            <h2 style={{ fontSize: "clamp(26px,4vw,44px)", fontWeight: 880, letterSpacing: "-.04em", lineHeight: 1.12, color: "#f0ece8", marginBottom: 16, maxWidth: 600 }}>
+              바이브 코딩으로 빠르게 만들었는데,<br /><span style={{ background: "linear-gradient(110deg,#f0ece8,#7eecd4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>그 다음이 문제입니다.</span>
+            </h2>
+            <p style={{ fontSize: 15, color: "rgba(255,255,255,.38)", lineHeight: 1.85, marginBottom: 48, maxWidth: 540 }}>
+              AI·노코드·바이브 코딩으로 MVP를 빠르게 만드는 건 이제 어렵지 않습니다. 하지만 실제 사용자가 붙고 나면 현실이 달라집니다.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            {/* 비교 테이블 */}
+            <div style={{ borderRadius: 20, overflow: "hidden", border: "1px solid rgba(255,255,255,.08)" }}>
+              {/* 헤더 */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", background: "rgba(255,255,255,.04)", borderBottom: "1px solid rgba(255,255,255,.08)" }}>
+                <div style={{ padding: "16px 24px", fontSize: 12, fontWeight: 700, color: "rgba(255,255,255,.35)", letterSpacing: ".1em" }}>상황</div>
+                <div style={{ padding: "16px 24px", fontSize: 12, fontWeight: 700, color: "rgba(239,68,68,.6)", letterSpacing: ".1em", borderLeft: "1px solid rgba(255,255,255,.06)" }}>바이브 코딩만 했을 때</div>
+                <div style={{ padding: "16px 24px", fontSize: 12, fontWeight: 700, color: "#7eecd4", letterSpacing: ".1em", borderLeft: "1px solid rgba(255,255,255,.06)" }}>RGEO Labs와 함께하면</div>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {[
-                  { stage: "만들 때", problem: "AI로 뚝딱, 빠르고 저렴", icon: "✦", ok: true },
-                  { stage: "운영하면", problem: "버그 수정할 사람이 없다", icon: "✕", ok: false },
-                  { stage: "확장하면", problem: "코드 구조가 버티질 못한다", icon: "✕", ok: false },
-                  { stage: "노출하면", problem: "아무도 검색에서 못 찾는다", icon: "✕", ok: false },
-                  { stage: "RGEO Labs", problem: "운영·확장·노출까지 함께 설계합니다", icon: "✦", ok: true },
-                ].map(({ stage, problem, icon, ok }, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 20px", borderRadius: 14, background: ok && i > 0 ? "rgba(126,236,212,.04)" : "rgba(255,255,255,.03)", border: `1px solid ${ok && i > 0 ? "rgba(126,236,212,.15)" : "rgba(255,255,255,.07)"}` }}>
-                    <span style={{ fontSize: 11, color: ok ? "#7eecd4" : "rgba(239,68,68,.6)", flexShrink: 0, fontWeight: 900 }}>{icon}</span>
-                    <div style={{ display: "flex", alignItems: "center", gap: 12, flex: 1 }}>
-                      <span style={{ fontSize: 11, fontWeight: 700, color: ok && i > 0 ? "#7eecd4" : "rgba(255,255,255,.28)", letterSpacing: ".06em", whiteSpace: "nowrap", background: "rgba(255,255,255,.05)", padding: "3px 9px", borderRadius: 100, border: "1px solid rgba(255,255,255,.07)" }}>{stage}</span>
-                      <span style={{ fontSize: 13, color: ok && i > 0 ? "rgba(255,255,255,.7)" : "rgba(255,255,255,.4)", fontWeight: ok && i > 0 ? 650 : 400 }}>{problem}</span>
-                    </div>
+              {[
+                { situation: "🚀 출시할 때", bad: "빠르게 만들었지만 코드가 엉켜있음", good: "확장 가능한 구조로 처음부터 설계" },
+                { situation: "🐛 버그가 생기면", bad: "수정할 개발자가 없어서 방치", good: "월 구독으로 즉시 대응" },
+                { situation: "📈 사용자가 늘면", bad: "서버가 버티질 못하거나 기능 추가 불가", good: "인프라·기능 확장 함께 설계" },
+                { situation: "🔍 검색 노출", bad: "만들어도 아무도 못 찾음", good: "GEO·SEO 구조를 개발 단계부터 적용" },
+                { situation: "🔄 지속 운영", bad: "손댈 수 없는 상태로 방치되거나 재개발", good: "월 단위 운영·개선 지속" },
+              ].map(({ situation, bad, good }, i) => (
+                <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", borderBottom: i < 4 ? "1px solid rgba(255,255,255,.05)" : "none", background: i % 2 === 0 ? "rgba(255,255,255,.015)" : "transparent" }}>
+                  <div style={{ padding: "18px 24px", fontSize: 13, fontWeight: 700, color: "rgba(255,255,255,.6)" }}>{situation}</div>
+                  <div style={{ padding: "18px 24px", fontSize: 13, color: "rgba(255,255,255,.35)", borderLeft: "1px solid rgba(255,255,255,.05)", display: "flex", alignItems: "center", gap: 8 }}>
+                    <span style={{ color: "rgba(239,68,68,.5)", fontSize: 10, flexShrink: 0 }}>✕</span>{bad}
                   </div>
-                ))}
-              </div>
+                  <div style={{ padding: "18px 24px", fontSize: 13, color: "rgba(126,236,212,.85)", borderLeft: "1px solid rgba(255,255,255,.05)", display: "flex", alignItems: "center", gap: 8 }}>
+                    <span style={{ color: "#7eecd4", fontSize: 10, flexShrink: 0 }}>✓</span>{good}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <div style={{ marginTop: 24, display: "flex", justifyContent: "center" }}>
+              <a href="#apply" className="btn-a" style={{ textDecoration: "none" }}>운영 구조 상담하기 →</a>
             </div>
           </Reveal>
         </div>
@@ -1374,54 +1435,6 @@ function RgeoLabsLanding() {
 
       <hr className="divider" />
 
-      {/* TARGETS */}
-      <section style={{ padding: "100px 0" }}>
-        <div className="pad-s" style={W}>
-          <Reveal>
-            <span className="eyebrow">For who</span>
-            <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 880, letterSpacing: "-.04em", lineHeight: 1.1, marginBottom: 14, color: "#f0ece8" }}>
-              개발자가 없어서,<br />개발비가 없어서<br />못 시작하고 있다면.
-            </h2>
-            <p style={{ fontSize: 16, color: "rgba(255,255,255,.36)", lineHeight: 1.8, maxWidth: 420, marginBottom: 48 }}>RGEO Labs는 이 두 가지 문제를 동시에 해결합니다.</p>
-          </Reveal>
-          <div className="col2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 16 }}>
-            {targets.map(({ icon, title, desc }, i) => (
-              <Reveal key={title} delay={i * 0.07}>
-                <div className="card" style={{ padding: "28px 24px", display: "flex", gap: 18, alignItems: "flex-start" }}>
-                  <div style={{ width: 42, height: 42, borderRadius: 11, background: "rgba(126,236,212,.07)", border: "1px solid rgba(126,236,212,.13)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 17, color: "rgba(126,236,212,.7)", flexShrink: 0 }}>{icon}</div>
-                  <div>
-                    <h3 style={{ fontSize: 15, fontWeight: 750, color: "#f0ece8", marginBottom: 7, lineHeight: 1.4 }}>{title}</h3>
-                    <p style={{ fontSize: 13, color: "rgba(255,255,255,.38)", lineHeight: 1.78 }}>{desc}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal delay={0.2}>
-            <div style={{ background: "rgba(126,236,212,.03)", border: "1px solid rgba(126,236,212,.1)", borderRadius: 20, padding: "32px 32px" }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: "#7eecd4", letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 24 }}>개발자 채용 vs RGEO Labs 구독</div>
-              <div className="col2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
-                {[
-                  { label: "개발자 직접 채용", color: "rgba(255,255,255,.28)", accent: "rgba(239,68,68,.45)", icon: "✕", items: ["연봉 6,000~8,000만 원 + 4대보험", "장비·복지·퇴직금 추가 비용", "이직 리스크 · 채용 공백 기간", "채용에만 평균 4개월 소요", "한 명의 스택에 기술이 한정"] },
-                  { label: "RGEO Labs 구독", color: "#7eecd4", accent: "#7eecd4", icon: "✦", items: ["채용 대비 낮은 월 비용", "즉시 시작 · 공백 없음", "웹·앱·GEO·SEO 풀커버", "기술 방향 함께 설계", "장기 파트너십 구조"] },
-                ].map(({ label, color, accent, icon, items }) => (
-                  <div key={label}>
-                    <div style={{ fontSize: 13, fontWeight: 700, color, marginBottom: 14, letterSpacing: ".04em" }}>{label}</div>
-                    {items.map((t) => (
-                      <div key={t} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 13, color: "rgba(255,255,255,.42)", marginBottom: 9 }}>
-                        <span style={{ color: accent, fontSize: 10, flexShrink: 0, marginTop: 3 }}>{icon}</span>{t}
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <hr className="divider" />
-
       {/* SERVICES */}
       <section id="services" style={{ padding: "100px 0" }}>
         <div className="pad-s" style={W}>
@@ -1500,13 +1513,14 @@ function RgeoLabsLanding() {
               <div style={{ fontSize: 11, fontWeight: 700, color: "#7eecd4", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: 20 }}>Price Range</div>
               <div className="col3" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14, marginBottom: 20 }}>
                 {[
-                  { range: "월 50만원~", label: "소규모 운영·유지보수", desc: "기능 추가·버그 수정·배포 등 운영 중심" },
-                  { range: "월 100~200만원", label: "MVP · 신규 서비스", desc: "핵심 기능 개발 + GEO·SEO 구조 포함" },
-                  { range: "월 200만원~", label: "풀스택 파트너십", desc: "웹·앱·자동화·운영 전담 기술팀 구조" },
-                ].map(({ range, label, desc }) => (
-                  <div key={label} style={{ padding: "22px 20px", borderRadius: 16, background: "rgba(255,255,255,.03)", border: "1px solid rgba(255,255,255,.07)" }}>
-                    <div style={{ fontSize: 20, fontWeight: 900, color: "#7eecd4", letterSpacing: "-.03em", marginBottom: 8 }}>{range}</div>
-                    <div style={{ fontSize: 13, fontWeight: 700, color: "#f0ece8", marginBottom: 6 }}>{label}</div>
+                  { range: "월 50만원~", label: "소규모 운영·유지보수", desc: "기능 추가·버그 수정·배포 등 운영 중심", highlight: false },
+                  { range: "월 100~200만원", label: "MVP · 신규 서비스", desc: "핵심 기능 개발 + GEO·SEO 구조 포함", highlight: true },
+                  { range: "월 200만원~", label: "풀스택 파트너십", desc: "웹·앱·자동화·운영 전담 기술팀 구조", highlight: false },
+                ].map(({ range, label, desc, highlight }, i) => (
+                  <div key={i} style={{ padding: "28px 24px", borderRadius: 16, background: highlight ? "rgba(126,236,212,.06)" : "rgba(255,255,255,.03)", border: `1px solid ${highlight ? "rgba(126,236,212,.2)" : "rgba(255,255,255,.07)"}`, textAlign: "center", position: "relative" }}>
+                    {highlight && <div style={{ position: "absolute", top: -1, left: "50%", transform: "translateX(-50%)", background: "#7eecd4", color: "#070508", fontSize: 10, fontWeight: 900, padding: "3px 12px", borderRadius: "0 0 8px 8px", letterSpacing: ".08em" }}>가장 많이 선택</div>}
+                    <div style={{ fontSize: 32, fontWeight: 900, color: highlight ? "#7eecd4" : "#f0ece8", letterSpacing: "-.04em", lineHeight: 1, marginBottom: 10, marginTop: highlight ? 8 : 0 }}>{range}</div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: highlight ? "#f0ece8" : "rgba(255,255,255,.7)", marginBottom: 8 }}>{label}</div>
                     <div style={{ fontSize: 12, color: "rgba(255,255,255,.35)", lineHeight: 1.65 }}>{desc}</div>
                   </div>
                 ))}
@@ -1638,17 +1652,24 @@ function RgeoLabsLanding() {
             </div>
           </Reveal>
 
-          <div className="col4" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 14 }}>
-            {processSteps.map(({ step, title, desc }, i) => (
-              <Reveal key={step} delay={i * 0.07}>
-                <div className="card" style={{ padding: "28px 24px", minHeight: 190, position: "relative", overflow: "hidden" }}>
-                  <div style={{ position: "absolute", right: 18, top: 14, fontSize: 42, fontWeight: 900, color: "rgba(126,236,212,.06)", letterSpacing: "-.06em" }}>{step}</div>
-                  <div style={{ width: 38, height: 38, borderRadius: 12, background: "rgba(126,236,212,.07)", border: "1px solid rgba(126,236,212,.14)", display: "flex", alignItems: "center", justifyContent: "center", color: "#7eecd4", fontSize: 12, fontWeight: 900, marginBottom: 34 }}>{step}</div>
-                  <h3 style={{ fontSize: 17, fontWeight: 800, color: "#f0ece8", marginBottom: 10, letterSpacing: "-.03em" }}>{title}</h3>
-                  <p style={{ fontSize: 13, color: "rgba(255,255,255,.38)", lineHeight: 1.75 }}>{desc}</p>
-                </div>
-              </Reveal>
-            ))}
+          {/* 연결선 타임라인 */}
+          <div style={{ position: "relative" }}>
+            {/* 연결선 */}
+            <div style={{ position: "absolute", top: 28, left: "calc(12.5% + 19px)", right: "calc(12.5% + 19px)", height: 1, background: "linear-gradient(90deg,#7eecd4,rgba(126,236,212,.2))", zIndex: 0 }} className="hide-m" />
+            <div className="col4" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 14, position: "relative", zIndex: 1 }}>
+              {processSteps.map(({ step, title, desc }, i) => (
+                <Reveal key={step} delay={i * 0.1}>
+                  <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+                    {/* 원형 스텝 */}
+                    <div style={{ width: 56, height: 56, borderRadius: "50%", background: i === 0 ? "rgba(126,236,212,.15)" : "rgba(255,255,255,.05)", border: `2px solid ${i === 0 ? "#7eecd4" : "rgba(255,255,255,.12)"}`, display: "flex", alignItems: "center", justifyContent: "center", color: i === 0 ? "#7eecd4" : "rgba(255,255,255,.4)", fontSize: 13, fontWeight: 900, marginBottom: 24, boxShadow: i === 0 ? "0 0 24px rgba(126,236,212,.2)" : "none", flexShrink: 0 }}>{step}</div>
+                    <div className="card" style={{ padding: "24px 20px", width: "100%" }}>
+                      <h3 style={{ fontSize: 16, fontWeight: 800, color: "#f0ece8", marginBottom: 8, letterSpacing: "-.02em" }}>{title}</h3>
+                      <p style={{ fontSize: 13, color: "rgba(255,255,255,.38)", lineHeight: 1.75 }}>{desc}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
