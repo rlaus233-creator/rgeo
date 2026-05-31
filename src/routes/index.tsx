@@ -1001,7 +1001,7 @@ function RgeoLabsLanding() {
           .desktop-hero-visual{
             display:none !important;
           }
-
+         .hide-m{display:none!important;} 
         }
         @media(max-width:600px){
           .col3,.col4{grid-template-columns:1fr!important;}
