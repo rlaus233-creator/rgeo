@@ -1258,6 +1258,45 @@ function RgeoLabsLanding() {
 
       <hr className="divider" />
 
+      {/* VIBE CODING REALITY */}
+      <section style={{ padding: "100px 0" }}>
+        <div className="pad-s" style={W}>
+          <Reveal>
+            <span className="eyebrow">Reality Check</span>
+            <div className="col2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center" }}>
+              <div>
+                <h2 style={{ fontSize: "clamp(26px,4vw,44px)", fontWeight: 880, letterSpacing: "-.04em", lineHeight: 1.12, color: "#f0ece8", marginBottom: 18 }}>
+                  바이브 코딩으로<br />빠르게 만들었는데,<br /><span style={{ background: "linear-gradient(110deg,#f0ece8,#7eecd4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>그 다음이 문제입니다.</span>
+                </h2>
+                <p style={{ fontSize: 15, color: "rgba(255,255,255,.38)", lineHeight: 1.85, marginBottom: 32 }}>
+                  AI·노코드·바이브 코딩으로 MVP를 빠르게 만드는 건 이제 어렵지 않습니다. 하지만 실제 사용자가 붙고 나면 다른 문제가 시작됩니다.
+                </p>
+                <a href="#apply" className="btn-a" style={{ textDecoration: "none" }}>운영 구조 상담하기 →</a>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                {[
+                  { stage: "만들 때", problem: "AI로 뚝딱, 빠르고 저렴", icon: "✦", ok: true },
+                  { stage: "운영하면", problem: "버그 수정할 사람이 없다", icon: "✕", ok: false },
+                  { stage: "확장하면", problem: "코드 구조가 버티질 못한다", icon: "✕", ok: false },
+                  { stage: "노출하면", problem: "아무도 검색에서 못 찾는다", icon: "✕", ok: false },
+                  { stage: "RGEO Labs", problem: "운영·확장·노출까지 함께 설계합니다", icon: "✦", ok: true },
+                ].map(({ stage, problem, icon, ok }, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 20px", borderRadius: 14, background: ok && i > 0 ? "rgba(126,236,212,.04)" : "rgba(255,255,255,.03)", border: `1px solid ${ok && i > 0 ? "rgba(126,236,212,.15)" : "rgba(255,255,255,.07)"}` }}>
+                    <span style={{ fontSize: 11, color: ok ? "#7eecd4" : "rgba(239,68,68,.6)", flexShrink: 0, fontWeight: 900 }}>{icon}</span>
+                    <div style={{ display: "flex", alignItems: "center", gap: 12, flex: 1 }}>
+                      <span style={{ fontSize: 11, fontWeight: 700, color: ok && i > 0 ? "#7eecd4" : "rgba(255,255,255,.28)", letterSpacing: ".06em", whiteSpace: "nowrap", background: "rgba(255,255,255,.05)", padding: "3px 9px", borderRadius: 100, border: "1px solid rgba(255,255,255,.07)" }}>{stage}</span>
+                      <span style={{ fontSize: 13, color: ok && i > 0 ? "rgba(255,255,255,.7)" : "rgba(255,255,255,.4)", fontWeight: ok && i > 0 ? 650 : 400 }}>{problem}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <hr className="divider" />
+
       {/* MARKET */}
       <section id="market" style={{ padding: "100px 0" }}>
         <div className="pad-s" style={W}>
@@ -1555,6 +1594,38 @@ function RgeoLabsLanding() {
           </Reveal>
         </div>
       </section>
+
+      {/* TEAM */}
+      <section style={{ padding: "100px 0" }}>
+        <div className="pad-s" style={W}>
+          <Reveal>
+            <span className="eyebrow">Team</span>
+            <h2 style={{ fontSize: "clamp(26px,4vw,44px)", fontWeight: 880, letterSpacing: "-.04em", lineHeight: 1.1, color: "#f0ece8", marginBottom: 16 }}>
+              소수 정예로,<br />전부 커버합니다.
+            </h2>
+            <p style={{ fontSize: 16, color: "rgba(255,255,255,.36)", lineHeight: 1.8, maxWidth: 480, marginBottom: 48 }}>
+              풀스택 개발 10년 이상의 개발자 팀이 함께합니다.<br />대형 에이전시의 비용 없이, 시니어급 실행력으로 처음부터 끝까지 직접 만듭니다.
+            </p>
+          </Reveal>
+          <div className="col3" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14, marginBottom: 14 }}>
+            {[
+              { icon: "💻", title: "웹 · 앱 개발", desc: "React, Node.js, iOS·Android까지 풀스택으로 대응합니다." },
+              { icon: "🌐", title: "GEO · SEO 설계", desc: "AI 검색과 구글에 발견되는 구조를 개발 단계부터 함께 심습니다." },
+              { icon: "⚙️", title: "운영 · 자동화", desc: "배포 후 운영, 기능 개선, AI 자동화까지 월 단위로 이어갑니다." },
+            ].map(({ icon, title, desc }, i) => (
+              <Reveal key={i} delay={i * 0.07}>
+                <div className="card" style={{ padding: "28px 24px" }}>
+                  <div style={{ fontSize: 22, marginBottom: 14 }}>{icon}</div>
+                  <div style={{ fontSize: 16, fontWeight: 800, color: "#f0ece8", marginBottom: 8 }}>{title}</div>
+                  <p style={{ fontSize: 13, color: "rgba(255,255,255,.4)", lineHeight: 1.8 }}>{desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <hr className="divider" />
 
       {/* PROCESS */}
       <section id="process" style={{ padding: "100px 0", background: "linear-gradient(180deg,rgba(255,255,255,.015),transparent)" }}>
