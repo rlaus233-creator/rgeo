@@ -1254,10 +1254,6 @@ function RgeoLabsLanding() {
         </div>
       </div>
 
-      <OperatingVisualSection W={W} />
-
-      <hr className="divider" />
-
       {/* VIBE CODING REALITY */}
       <section style={{ padding: "100px 0" }}>
         <div className="pad-s" style={W}>
@@ -1873,27 +1869,27 @@ function RgeoLabsLanding() {
                     name="type"
                     style={{
                       ...inputStyle,
-                      background: "#111",
+                      background: "rgba(255,255,255,.05)",
                       color: "#f0ece8",
                       cursor: "pointer"
                     }}
                   >
-                    <option value="" style={{ background: "#111", color: "#f0ece8" }}>
+                    <option value="" style={{ background: "#0d0b0f", color: "#f0ece8" }}>
                       프로젝트 유형 선택
                     </option>
-                    <option value="web" style={{ background: "#111", color: "#f0ece8" }}>
+                    <option value="web" style={{ background: "#0d0b0f", color: "#f0ece8" }}>
                       웹서비스 / 홈페이지
                     </option>
-                    <option value="app" style={{ background: "#111", color: "#f0ece8" }}>
+                    <option value="app" style={{ background: "#0d0b0f", color: "#f0ece8" }}>
                       앱 개발
                     </option>
-                    <option value="mvp" style={{ background: "#111", color: "#f0ece8" }}>
+                    <option value="mvp" style={{ background: "#0d0b0f", color: "#f0ece8" }}>
                       MVP / 프로토타입
                     </option>
-                    <option value="maintenance" style={{ background: "#111", color: "#f0ece8" }}>
+                    <option value="maintenance" style={{ background: "#0d0b0f", color: "#f0ece8" }}>
                       유지보수 / 기능개선
                     </option>
-                    <option value="geo" style={{ background: "#111", color: "#f0ece8" }}>
+                    <option value="geo" style={{ background: "#0d0b0f", color: "#f0ece8" }}>
                       GEO / SEO / AI 노출
                     </option>
                   </select>
