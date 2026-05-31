@@ -1003,6 +1003,7 @@ function RgeoLabsLanding() {
           }
          .hide-m{display:none!important;} 
         }
+
         @media(max-width:600px){
           .col3,.col4{grid-template-columns:1fr!important;}
           .pad-s{padding-left:20px!important;padding-right:20px!important;}
@@ -1696,7 +1697,7 @@ function RgeoLabsLanding() {
                 </div>
 
                 <form
-                  action="https://formspree.io/f/폼ID"
+                  action="https://formspree.io/f/xvzynngd"
                   method="POST"
                   style={{
                     background: "rgba(255,255,255,.04)",
@@ -1773,7 +1774,7 @@ function RgeoLabsLanding() {
             {[
               { label: "서비스", items: ["웹 서비스 · SaaS", "iOS · Android 앱", "기존 시스템 유지보수", "MVP · 프로토타입", "GEO · SEO 최적화"] },
               { label: "비용 구조", items: ["월 구독형", "기술투자형", "혼합형 (케이스별)"] },
-              { label: "연락", items: ["hello@rgeo.ai", "@rgeo.labs", "rgeo.ai"] },
+              { label: "연락", items: ["hello@rgeo.ai"] },
             ].map(({ label, items }) => (
               <div key={label}>
                 <div style={{ fontWeight: 700, fontSize: 11, letterSpacing: ".12em", color: "rgba(255,255,255,.32)", marginBottom: 16, textTransform: "uppercase" }}>{label}</div>
