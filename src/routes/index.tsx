@@ -1260,7 +1260,7 @@ function RgeoLabsLanding() {
           <Reveal>
             <span className="eyebrow">For who</span>
             <h2 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 880, letterSpacing: "-.04em", lineHeight: 1.1, marginBottom: 14, color: "#f0ece8" }}>
-              개발자가 없어서,<br />개발비가 없어서<br />못 시작하고 있다면.
+              개발자가 없어서,<br />개발비가 없어서<br />시작 못 하고 있다면.
             </h2>
             <p style={{ fontSize: 16, color: "rgba(255,255,255,.36)", lineHeight: 1.8, maxWidth: 420, marginBottom: 48 }}>RGEO Labs는 이 두 가지 문제를 동시에 해결합니다.</p>
           </Reveal>
