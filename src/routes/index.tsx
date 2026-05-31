@@ -1606,7 +1606,7 @@ function RgeoLabsLanding() {
       </section>
 
       {/* TEAM */}
-      <section style={{ padding: "100px 0" }}>
+      <section id="team" style={{ padding: "100px 0" }}>
         <div className="pad-s" style={W}>
           <Reveal>
             <span className="eyebrow">Team</span>
