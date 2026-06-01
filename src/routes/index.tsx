@@ -216,7 +216,7 @@ function Index() {
           <Reveal center>
             <p style={{ fontSize: 13, fontWeight: 700, color: "#7eecd4", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 32 }}>현실</p>
             <h2 style={{ fontSize: "clamp(32px,5vw,64px)", fontWeight: 900, letterSpacing: "-.04em", lineHeight: 1.1, color: "#fff" }}>
-              개발자가 없어서,<br />개발비가 없어서<br />못 시작하고 있다면
+              개발자가 없어서,<br />개발비가 없어서<br />시작 못하고 있다면
             </h2>
           </Reveal>
         </div>
@@ -412,7 +412,7 @@ function Index() {
             <div style={{ background: "rgba(126,236,212,.06)", border: "1px solid rgba(126,236,212,.15)", borderRadius: 16, padding: "24px 28px", textAlign: "center" }}>
               <p style={{ fontSize: 15, color: "rgba(255,255,255,.6)", lineHeight: 1.8 }}>
                 RGEO Labs는 <strong style={{ color: "#7eecd4" }}>개발 단계부터 GEO·SEO 구조를 함께 설계</strong>합니다.<br />
-                런칭하자마자 AI 검색에 노출되는 구조로 시작하세요.
+                
               </p>
             </div>
           </Reveal>
