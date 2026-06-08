@@ -369,7 +369,7 @@ function Index() {
               <div style={{ flex: 1, minWidth: 240 }}>
                 <div style={{ fontSize: 16, fontWeight: 800, color: "#0a0a0a", marginBottom: 8 }}>개발과 동시에 GEO·SEO 구조를 심습니다</div>
                 <p style={{ fontSize: 14, color: "#555", lineHeight: 1.75 }}>
-                  <strong>GEO(Generative Engine Optimization)</strong>는 ChatGPT·Perplexity·Google AI 같은 AI 검색에서 내 서비스가 먼저 언급되도록 구조화하는 최적화입니다.
+                  <strong>GEO</strong>는 ChatGPT·Perplexity·Google AI 같은 AI 검색에서 내 서비스가 먼저 언급되도록 구조화하는 최적화입니다.
                   처음 설계부터 AI 검색과 구글에 발견되는 구조로 시작합니다. 런칭 시점부터 노출 효과가 시작됩니다.
                 </p>
               </div>
