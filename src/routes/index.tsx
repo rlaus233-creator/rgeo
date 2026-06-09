@@ -13,6 +13,25 @@ const faqs = [
   { q: "월 구독형 개발은 어떻게 진행되나요?", a: "상담 후 필요한 기능과 우선순위를 먼저 정리하고, 월 단위로 개발·수정·배포·운영 개선을 이어갑니다. 처음부터 크게 만들기보다 작게 출시하고 빠르게 개선하는 방식을 권장합니다." },
 ];
 
+function Icon({ name, size = 22, color = "currentColor" }: { name: string; size?: number; color?: string }) {
+  const common = { width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: color, strokeWidth: 2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+  const paths: Record<string, ReactNode> = {
+    wrench: <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-2.5 2.5-2.5z" />,
+    trending: <><polyline points="3 17 9 11 13 15 21 7" /><polyline points="15 7 21 7 21 13" /></>,
+    gear: <><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></>,
+    layout: <><rect x="3" y="3" width="18" height="18" rx="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" /></>,
+    server: <><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5v14a9 3 0 0 0 18 0V5" /><path d="M3 12a9 3 0 0 0 18 0" /></>,
+    monitor: <><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></>,
+    globe: <><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></>,
+    search: <><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></>,
+    sparkles: <><path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5l4.6-1.9z" /><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" /></>,
+    building: <><rect x="4" y="2" width="16" height="20" rx="1" /><line x1="9" y1="14" x2="15" y2="14" /></>,
+    repeat: <><polyline points="17 1 21 5 17 9" /><path d="M3 11V9a4 4 0 0 1 4-4h14" /><polyline points="7 23 3 19 7 15" /><path d="M21 13v2a4 4 0 0 1-4 4H3" /></>,
+    zap: <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />,
+  };
+  return <svg {...common}>{paths[name]}</svg>;
+}
+
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -317,10 +336,10 @@ function Index() {
             </p>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}>
-            {[["🛠️", "버그 수정", "AI가 만든 코드, 수정할 사람이 없을 때"], ["📈", "확장 대응", "사용자 늘어날 때 구조가 버티지 못할 때"], ["⚙️", "운영 지속", "배포·모니터링·유지보수를 이어갈 때"]].map(([icon, title, desc], i) => (
+            {[["wrench", "버그 수정", "AI가 만든 코드, 수정할 사람이 없을 때"], ["trending", "확장 대응", "사용자 늘어날 때 구조가 버티지 못할 때"], ["gear", "운영 지속", "배포·모니터링·유지보수를 이어갈 때"]].map(([icon, title, desc], i) => (
               <Reveal key={title} delay={i * 0.08}>
                 <div style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.08)", borderRadius: 16, padding: "28px 22px", textAlign: "center" }}>
-                  <div style={{ fontSize: 28, marginBottom: 12 }}>{icon}</div>
+                  <div style={{ marginBottom: 12, color: "#7eecd4", display: "flex", justifyContent: "center" }}><Icon name={icon} size={28} /></div>
                   <div style={{ fontSize: 15, fontWeight: 800, color: "#fff", marginBottom: 8 }}>{title}</div>
                   <div style={{ fontSize: 13, color: "rgba(255,255,255,.4)", lineHeight: 1.65 }}>{desc}</div>
                 </div>
@@ -366,7 +385,7 @@ function Index() {
           {/* GEO 강조 배너 */}
           <Reveal delay={0.2}>
             <div style={{ marginTop: 2, padding: "32px 36px", background: "#f0fdf9", border: "1px solid #7eecd4", display: "flex", alignItems: "flex-start", gap: 20, flexWrap: "wrap" }}>
-              <div style={{ fontSize: 24, flexShrink: 0 }}>🌐</div>
+              <div style={{ flexShrink: 0, color: "#059669" }}><Icon name="globe" size={24} /></div>
               <div style={{ flex: 1, minWidth: 240 }}>
                 <div style={{ fontSize: 16, fontWeight: 800, color: "#0a0a0a", marginBottom: 8 }}>개발과 동시에 GEO·SEO 구조를 심습니다</div>
                 <p style={{ fontSize: 14, color: "#555", lineHeight: 1.75 }}>
@@ -394,13 +413,13 @@ function Index() {
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16, marginBottom: 40 }}>
             {[
-              { icon: "🔍", title: "SEO", desc: "구글·네이버 검색 최적화.\n키워드로 검색했을 때 상위에 노출되는 구조", label: "기존 방식" },
-              { icon: "🤖", title: "GEO", desc: "AI 검색 최적화.\nChatGPT·Perplexity가 질문에 답할 때 내 서비스를 언급하는 구조", label: "새로운 기준", highlight: true },
+              { icon: "search", title: "SEO", desc: "구글·네이버 검색 최적화.\n키워드로 검색했을 때 상위에 노출되는 구조", label: "기존 방식" },
+              { icon: "sparkles", title: "GEO", desc: "AI 검색 최적화.\nChatGPT·Perplexity가 질문에 답할 때 내 서비스를 언급하는 구조", label: "새로운 기준", highlight: true },
             ].map(({ icon, title, desc, label, highlight }) => (
               <Reveal key={title}>
                 <div style={{ background: highlight ? "rgba(126,236,212,.08)" : "rgba(255,255,255,.04)", border: `1px solid ${highlight ? "rgba(126,236,212,.25)" : "rgba(255,255,255,.08)"}`, borderRadius: 20, padding: "32px 28px" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-                    <span style={{ fontSize: 24 }}>{icon}</span>
+                    <span style={{ color: highlight ? "#7eecd4" : "#fff", display: "flex" }}><Icon name={icon} size={24} /></span>
                     <span style={{ fontSize: 22, fontWeight: 900, color: highlight ? "#7eecd4" : "#fff" }}>{title}</span>
                     <span style={{ fontSize: 11, fontWeight: 700, color: highlight ? "#7eecd4" : "rgba(255,255,255,.3)", background: highlight ? "rgba(126,236,212,.12)" : "rgba(255,255,255,.06)", padding: "3px 10px", borderRadius: 100 }}>{label}</span>
                   </div>
@@ -460,13 +479,13 @@ function Index() {
           {/* 역할 카드 */}
           <div className="team-roles" style={{ display: "grid", gap: 16 }}>
             {[
-              { ico: "🧩", title: "기획 · PM", exp: "경력 20년+", desc: "대규모 시스템 설계와 프로젝트 총괄. 무엇을 어떤 순서로 만들지 함께 정리합니다." },
-              { ico: "⚙️", title: "백엔드 · 설계", exp: "경력 15년+", desc: "실무경험 기반의 안정적인 서버와 데이터 구조. 대기업 운영 시스템 경험." },
-              { ico: "🎨", title: "프론트 · 앱", exp: "경력 8년+", desc: "웹·모바일 화면 개발과 UX. 사용자가 실제로 편하게 쓰는 결과물을 만듭니다." },
+              { ico: "layout", title: "기획 · PM", exp: "경력 20년+", desc: "대규모 시스템 설계와 프로젝트 총괄. 무엇을 어떤 순서로 만들지 함께 정리합니다." },
+              { ico: "server", title: "백엔드 · 설계", exp: "경력 15년+", desc: "실무경험 기반의 안정적인 서버와 데이터 구조. 대기업 운영 시스템 경험." },
+              { ico: "monitor", title: "프론트 · 앱", exp: "경력 8년+", desc: "웹·모바일 화면 개발과 UX. 사용자가 실제로 편하게 쓰는 결과물을 만듭니다." },
             ].map(({ ico, title, exp, desc }, i) => (
               <Reveal key={title} delay={i * 0.08}>
                 <div style={{ background: "#fff", border: "1px solid #efefef", borderRadius: 18, padding: "32px 26px", height: "100%" }}>
-                  <div style={{ width: 48, height: 48, borderRadius: 12, background: "#f0fdf9", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, marginBottom: 18 }}>{ico}</div>
+                  <div style={{ width: 48, height: 48, borderRadius: 12, background: "#f0fdf9", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18, color: "#059669" }}><Icon name={ico} size={22} /></div>
                   <div style={{ fontSize: 18, fontWeight: 800, color: "#0a0a0a", marginBottom: 6 }}>{title}</div>
                   <div style={{ fontSize: 13, color: "#059669", fontWeight: 700, marginBottom: 12 }}>{exp}</div>
                   <div style={{ fontSize: 13.5, color: "#666", lineHeight: 1.7 }}>{desc}</div>
@@ -560,9 +579,9 @@ function Index() {
           </div>
           <Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 14 }}>
-              {[["🏢", "대기업 포함", "다수 기업 파트너십 운영 중"], ["🔁", "높은 재계약률", "평균 2~3개월 단위 지속 협업"], ["⚡", "즉시 시작", "상담 후 빠르면 1주 내 착수"]].map(([icon, value, label]) => (
+              {[["building", "대기업 포함", "다수 기업 파트너십 운영 중"], ["repeat", "높은 재계약률", "평균 2~3개월 단위 지속 협업"], ["zap", "즉시 시작", "상담 후 빠르면 1주 내 착수"]].map(([icon, value, label]) => (
                 <div key={value} style={{ padding: "20px", borderRadius: 14, background: "#f9f9f9", border: "1px solid #f0f0f0", display: "flex", alignItems: "center", gap: 14 }}>
-                  <div style={{ fontSize: 20, flexShrink: 0 }}>{icon}</div>
+                  <div style={{ flexShrink: 0, color: "#059669", display: "flex" }}><Icon name={icon} size={20} /></div>
                   <div>
                     <div style={{ fontSize: 14, fontWeight: 800, color: "#0a0a0a", marginBottom: 3 }}>{value}</div>
                     <div style={{ fontSize: 12, color: "#888" }}>{label}</div>
