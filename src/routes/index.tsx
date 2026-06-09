@@ -33,6 +33,70 @@ function Reveal({ children, delay = 0, center = false }: { children: ReactNode; 
   );
 }
 
+// ⬇️ 이 전체를 복사해서, 파일 위쪽의 function FaqItem(...) {...} 바로 아래(또는 위)에 붙여넣으세요.
+// (Index 함수 "밖"이어야 합니다. FaqItem, Avatar 와 같은 레벨)
+
+function LogoCard({ name, projects }: { name: string; projects: string }) {
+  const [hover, setHover] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        position: "relative",
+        background: hover ? "rgba(126,236,212,.06)" : "#0a0a0a",
+        padding: "32px 16px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        minHeight: 96,
+        cursor: "default",
+        transition: "background .2s",
+      }}
+    >
+      <span style={{
+        fontSize: "clamp(16px,2.2vw,20px)",
+        fontWeight: 800,
+        color: hover ? "#7eecd4" : "rgba(255,255,255,.85)",
+        letterSpacing: "-.02em",
+        textAlign: "center",
+        transition: "color .2s",
+      }}>{name}</span>
+
+      <div style={{
+        position: "absolute",
+        bottom: "calc(100% + 8px)",
+        left: "50%",
+        transform: hover ? "translateX(-50%) translateY(0)" : "translateX(-50%) translateY(6px)",
+        width: 220,
+        background: "#1a1a1a",
+        border: "1px solid rgba(126,236,212,.3)",
+        borderRadius: 12,
+        padding: "14px 16px",
+        fontSize: 12.5,
+        lineHeight: 1.6,
+        color: "rgba(255,255,255,.75)",
+        opacity: hover ? 1 : 0,
+        pointerEvents: "none",
+        transition: "opacity .2s, transform .2s",
+        zIndex: 10,
+        boxShadow: "0 8px 32px rgba(0,0,0,.5)",
+      }}>
+        {projects}
+        <span style={{
+          position: "absolute",
+          top: "100%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          borderLeft: "6px solid transparent",
+          borderRight: "6px solid transparent",
+          borderTop: "6px solid #1a1a1a",
+        }} />
+      </div>
+    </div>
+  );
+}
+
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
@@ -474,6 +538,52 @@ function Index() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ⬇️ 이 전체를 복사해서, TEAM 섹션의 </section> 다음 줄 ~ PRICING의 <section id="pricing"> 앞에 붙여넣으세요 */}
+
+      <section className="sb" style={{ padding: "120px 24px" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <Reveal center>
+            <p style={{ fontSize: 13, fontWeight: 700, color: "#7eecd4", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 24, textAlign: "center" }}>검증된 실적</p>
+            <h2 style={{ fontSize: "clamp(26px,4vw,48px)", fontWeight: 900, letterSpacing: "-.04em", lineHeight: 1.15, color: "#fff", marginBottom: 20, textAlign: "center" }}>
+              이미 증명된 손이<br />당신의 서비스를 만듭니다
+            </h2>
+            <p style={{ fontSize: "clamp(14px,2vw,16px)", color: "rgba(255,255,255,.45)", lineHeight: 1.75, textAlign: "center", maxWidth: 540, margin: "0 auto 16px" }}>
+              참여 개발자들이 아래 기업·기관의 프로젝트를 수행한 경험이 있습니다
+            </p>
+            <p style={{ fontSize: 12, color: "rgba(255,255,255,.25)", textAlign: "center", marginBottom: 48 }}>
+              카드에 마우스를 올리면 수행 프로젝트가 표시됩니다
+            </p>
+          </Reveal>
+
+          <Reveal center delay={0.1}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 1, borderRadius: 20, overflow: "hidden", border: "1px solid rgba(255,255,255,.08)", background: "rgba(255,255,255,.08)" }}>
+              {[
+                { name: "삼성전자", projects: "금형관리시스템 · 갤럭시스토어 셀러포털 · 광고플랫폼 · 반도체 생산관리" },
+                { name: "SK하이닉스", projects: "반도체 생산운영시스템 고도화 · 투자관리(ITIM) · 부품생애관리(BOM)" },
+                { name: "KT", projects: "BI/DW 통합 포털 구축" },
+                { name: "LG", projects: "기지국 운영관리시스템 · NICS 구축 · 운영" },
+                { name: "LH공사", projects: "임대주택 등록·조회 시스템(렌트홈) 구축" },
+                { name: "교육부", projects: "초등 국정 디지털교과서(사회·과학) 콘텐츠 개발" },
+                { name: "도로공사", projects: "통합 데이터베이스 구축 사업" },
+                { name: "우리은행", projects: "PMS 프로젝트관리 솔루션 구축" },
+              ].map((item) => (
+                <LogoCard key={item.name} name={item.name} projects={item.projects} />
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal center delay={0.2}>
+            <p style={{ fontSize: "clamp(14px,2vw,16px)", color: "rgba(255,255,255,.5)", textAlign: "center", marginTop: 32, lineHeight: 1.7 }}>
+              반도체 · 제조 · 금융 · 통신 · 공공 분야{" "}
+              <strong style={{ color: "#7eecd4" }}>50건 이상</strong>의 프로젝트 수행 경험
+              <span style={{ display: "block", fontSize: 13, color: "rgba(255,255,255,.3)", marginTop: 12 }}>
+                외 다수 · 대기업 SI부터 자체 AI 서비스 출시까지
+              </span>
+            </p>
+          </Reveal>
         </div>
       </section>
 
