@@ -477,8 +477,6 @@ function Index() {
         </div>
       </section>
          
-         
-      </section>
 
 
       <section className="sb" style={{ padding: "120px 24px" }}>
