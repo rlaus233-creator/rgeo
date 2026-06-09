@@ -478,49 +478,53 @@ function Index() {
         </div>
       </section>
 
-     <section className="sb" style={{ padding: "120px 24px" }}>
-    <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-      <Reveal center>
-        <p style={{ fontSize: 13, fontWeight: 700, color: "#7eecd4", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 24, textAlign: "center" }}>검증된 실적</p>
-        <h2 style={{ fontSize: "clamp(26px,4vw,48px)", fontWeight: 900, letterSpacing: "-.04em", lineHeight: 1.15, color: "#fff", marginBottom: 20, textAlign: "center" }}>
-          이미 증명된 손이<br />당신의 서비스를 만듭니다
-        </h2>
-        <p style={{ fontSize: "clamp(14px,2vw,16px)", color: "rgba(255,255,255,.45)", lineHeight: 1.75, textAlign: "center", maxWidth: 540, margin: "0 auto 48px" }}>
-          참여 개발자들이 아래 기업·기관의 프로젝트를 수행한 경험이 있습니다
-        </p>
-      </Reveal>
 
-      <Reveal center delay={0.1}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 1, borderRadius: 20, overflow: "hidden", border: "1px solid rgba(255,255,255,.08)", background: "rgba(255,255,255,.08)" }}>
-          {[
-            { name: "삼성전자", work: "금형관리·갤럭시스토어\n셀러포털·광고플랫폼" },
-            { name: "SK하이닉스", work: "반도체 생산운영\n투자·부품관리" },
-            { name: "KT", work: "BI/DW 통합 포털" },
-            { name: "LG", work: "기지국 운영관리\nNICS 구축" },
-            { name: "LH공사", work: "임대주택 등록·조회\n(렌트홈)" },
-            { name: "교육부", work: "초등 디지털교과서\n콘텐츠 개발" },
-            { name: "도로공사", work: "통합 데이터베이스\n구축" },
-            { name: "우리은행", work: "PMS 프로젝트관리\n솔루션" },
-          ].map(({ name, work }) => (
-            <div key={name} style={{ background: "#0a0a0a", padding: "28px 18px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8, minHeight: 120, textAlign: "center" }}>
-              <span style={{ fontSize: "clamp(16px,2vw,19px)", fontWeight: 800, color: "#fff", letterSpacing: "-.02em" }}>{name}</span>
-              <span style={{ fontSize: 11.5, color: "rgba(255,255,255,.4)", lineHeight: 1.5, whiteSpace: "pre-line" }}>{work}</span>
+      <section className="sb" style={{ padding: "120px 24px" }}>
+       
+        <style>{`
+          .track-grid{ grid-template-columns: repeat(4, 1fr); }
+          @media(max-width:768px){ .track-grid{ grid-template-columns: repeat(2, 1fr); } }
+        `}</style>
+
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <Reveal center>
+            <p style={{ fontSize: 13, fontWeight: 700, color: "#7eecd4", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 20, textAlign: "center" }}>검증된 실적</p>
+            <h2 style={{ fontSize: "clamp(24px,5vw,46px)", fontWeight: 900, letterSpacing: "-.04em", lineHeight: 1.18, color: "#fff", marginBottom: 18, textAlign: "center" }}>
+              이미 증명해왔습니다.
+            </h2>
+            <p style={{ fontSize: "clamp(13px,2vw,16px)", color: "rgba(255,255,255,.45)", lineHeight: 1.7, textAlign: "center", maxWidth: 540, margin: "0 auto 40px" }}>
+              참여 개발자들이 아래 기업·기관의 프로젝트를 수행한 경험이 있습니다
+            </p>
+          </Reveal>
+
+          <Reveal center delay={0.1}>
+            <div className="track-grid" style={{ display: "grid", gap: 1, borderRadius: 18, overflow: "hidden", border: "1px solid rgba(255,255,255,.08)", background: "rgba(255,255,255,.08)" }}>
+              {[
+                { name: "삼성전자", work: "금형관리·갤럭시스토어" },
+                { name: "SK하이닉스", work: "반도체 생산운영\n투자·부품관리" },
+                { name: "KT", work: "통합 포털" },
+                { name: "LG", work: "기지국 운영관리" },
+                { name: "LH공사", work: "임대주택 등록·조회" },
+                { name: "교육부", work: "초등 디지털교과서" },
+                { name: "도로공사", work: "통합 데이터베이스" },
+                { name: "우리은행", work: "PMS 프로젝트관리" },
+              ].map(({ name, work }) => (
+                <div key={name} style={{ background: "#0a0a0a", padding: "26px 14px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 7, minHeight: 118, textAlign: "center" }}>
+                  <span style={{ fontSize: "clamp(15px,2vw,19px)", fontWeight: 800, color: "#fff", letterSpacing: "-.02em" }}>{name}</span>
+                  <span style={{ fontSize: "clamp(10.5px,1.6vw,12px)", color: "rgba(255,255,255,.4)", lineHeight: 1.5, whiteSpace: "pre-line" }}>{work}</span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </Reveal>
+          </Reveal>
 
-      <Reveal center delay={0.2}>
-        <p style={{ fontSize: "clamp(14px,2vw,16px)", color: "rgba(255,255,255,.5)", textAlign: "center", marginTop: 32, lineHeight: 1.7 }}>
-          반도체 · 제조 · 금융 · 통신 · 공공 분야{" "}
-          <strong style={{ color: "#7eecd4" }}>50건 이상</strong>의 프로젝트 수행 경험
-          <span style={{ display: "block", fontSize: 13, color: "rgba(255,255,255,.3)", marginTop: 12 }}>
-            외 다수 · 대기업 SI부터 자체 AI 서비스 출시까지
-          </span>
-        </p>
-      </Reveal>
-    </div>
-  </section>
+          <Reveal center delay={0.2}>
+            <p style={{ fontSize: "clamp(13px,2vw,16px)", color: "rgba(255,255,255,.5)", textAlign: "center", marginTop: 28, lineHeight: 1.7 }}>
+              반도체 · 제조 · 금융 · 통신 · 공공 분야{" "}
+              <strong style={{ color: "#7eecd4" }}>50건 이상</strong>의 프로젝트 수행 경험
+            </p>
+          </Reveal>
+        </div>
+      </section>
 
       {/* PRICING */}
       <section id="pricing" className="sw" style={{ padding: "120px 24px" }}>
