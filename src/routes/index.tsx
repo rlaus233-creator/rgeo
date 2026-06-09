@@ -579,40 +579,37 @@ function Index() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
+ 
+
+      {/* SOLUTION CASES */}
       <section className="sb" style={{ padding: "120px 24px" }}>
+        <style>{`
+          .sol-grid{ grid-template-columns: repeat(3, 1fr); }
+          @media(max-width:768px){ .sol-grid{ grid-template-columns: 1fr; } }
+        `}</style>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
-            <p style={{ fontSize: 13, fontWeight: 700, color: "#7eecd4", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 16 }}>후기</p>
-            <h2 style={{ fontSize: "clamp(28px,4vw,52px)", fontWeight: 900, letterSpacing: "-.04em", lineHeight: 1.1, color: "#fff", marginBottom: 64 }}>
-              함께한 분들의 이야기
+            <p style={{ fontSize: 13, fontWeight: 700, color: "#7eecd4", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 16 }}>우리가 하는 일</p>
+            <h2 style={{ fontSize: "clamp(28px,4vw,50px)", fontWeight: 900, letterSpacing: "-.04em", lineHeight: 1.12, color: "#fff", marginBottom: 56 }}>
+              이런 고민, 이렇게 풉니다
             </h2>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
+          <div className="sol-grid" style={{ display: "grid", gap: 20 }}>
             {[
-              { seed: "review1", quote: "외주 두 번 날리고 포기하려다 맡겼는데, 2주 만에 실제로 돌아가는 MVP가 나왔어요. 이게 가능한 거였구나 싶었습니다.", name: "스타트업 대표 A", tag: "앱 서비스 MVP" },
-              { seed: "review2", quote: "개발자 채용을 6개월 동안 못 하고 있었어요. 월 구독으로 전환하고 나서 속도가 완전히 달라졌습니다. 비용도 채용보다 훨씬 낮고요.", name: "IT 서비스 운영사 B", tag: "월 구독 파트너십" },
-              { seed: "review3", quote: "바이브 코딩으로 만들었는데 운영이 안 됐어요. 코드 인수해서 안정화해주고 지금은 잘 돌아갑니다.", name: "1인 창업자 C", tag: "코드 인수·운영" },
-            ].map(({ seed, quote, name, tag }, i) => (
-              <Reveal key={name} delay={i * 0.1}>
-                <div style={{ padding: "32px 28px", background: "rgba(255,255,255,.04)", borderRadius: 20, border: "1px solid rgba(255,255,255,.08)", display: "flex", flexDirection: "column", gap: 20 }}>
-                  <div style={{ fontSize: 28, color: "rgba(126,236,212,.2)", fontFamily: "Georgia, serif", lineHeight: 1 }}>"</div>
-                  <p style={{ fontSize: "clamp(14px,1.8vw,15px)", color: "rgba(255,255,255,.65)", lineHeight: 1.85, flex: 1 }}>{quote}</p>
-                  <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-                    <img src={`https://api.dicebear.com/7.x/notionists/svg?seed=${seed}&backgroundColor=transparent`} alt={name} width={44} height={44}
-                      style={{ borderRadius: "50%", background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.12)", flexShrink: 0 }} />
-                    <div>
-                      <div style={{ fontSize: 13, fontWeight: 700, color: "#fff" }}>{name}</div>
-                      <div style={{ fontSize: 11, color: "#7eecd4", marginTop: 3 }}>{tag}</div>
-                    </div>
-                  </div>
+              { tag: "외주 실패", prob: "\"외주를 두 번 날렸어요\"", sol: "남이 만들다 만 코드도 인수해서 안정화합니다. 연락 끊길 걱정 없이, 월 단위로 계속 함께 갑니다." },
+              { tag: "채용 한계", prob: "\"개발자 채용이 6개월째 막혔어요\"", sol: "채용 없이 바로 시작합니다. 연봉·4대보험 부담 없이, 필요한 만큼 월 단위로 유연하게 대응합니다." },
+              { tag: "운영 막힘", prob: "\"바이브코딩으로 만들었는데 운영이 안 돼요\"", sol: "빠르게 만든 결과물을 실제 운영 가능한 구조로 다듬습니다. 버그 수정, 확장, 배포까지 이어받습니다." },
+            ].map(({ tag, prob, sol }, i) => (
+              <Reveal key={tag} delay={i * 0.1}>
+                <div style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.08)", borderRadius: 20, padding: "32px 28px", height: "100%" }}>
+                  <span style={{ display: "inline-block", fontSize: 12, fontWeight: 700, color: "#7eecd4", background: "rgba(126,236,212,.1)", padding: "6px 14px", borderRadius: 100, marginBottom: 20 }}>{tag}</span>
+                  <div style={{ fontSize: 19, fontWeight: 800, color: "#fff", lineHeight: 1.4, marginBottom: 16 }}>{prob}</div>
+                  <div style={{ color: "#7eecd4", fontSize: 18, marginBottom: 12 }}>↓</div>
+                  <div style={{ fontSize: 14, color: "rgba(255,255,255,.55)", lineHeight: 1.8 }}>{sol}</div>
                 </div>
               </Reveal>
             ))}
           </div>
-          <Reveal delay={0.3}>
-            <p style={{ fontSize: 12, color: "rgba(255,255,255,.2)", textAlign: "center", marginTop: 20 }}>실제 협업 클라이언트의 익명 후기입니다. 상담 시 더 자세한 사례를 공유드립니다.</p>
-          </Reveal>
         </div>
       </section>
 
