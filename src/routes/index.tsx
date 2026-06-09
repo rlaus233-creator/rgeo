@@ -445,37 +445,8 @@ function Index() {
             </div>
           </Reveal>
 
-          {/* 개발자 카드 */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
-            {[
-              { seed: "jisoo", name: "JS", age: 36, exp: "11년차", stacks: ["React", "Node.js", "AWS"] },
-              { seed: "minjun", name: "MJ", age: 35, exp: "10년차", stacks: ["Python", "Django", "PostgreSQL"] },
-              { seed: "eunji", name: "EJ", age: 38, exp: "13년차", stacks: ["iOS", "Swift", "Firebase"] },
-              { seed: "hyunwoo", name: "HW", age: 34, exp: "10년차", stacks: ["Android", "Kotlin", "MySQL"] },
-              { seed: "somin", name: "SM", age: 37, exp: "12년차", stacks: ["Vue.js", "TypeScript", "GEO"] },
-              { seed: "taehun", name: "TH", age: 39, exp: "14년차", stacks: ["Java", "Spring", "Oracle"] },
-              { seed: "yejin", name: "YJ", age: 35, exp: "10년차", stacks: ["Next.js", "Supabase", "SEO"] },
-              { seed: "dongha", name: "DH", age: 36, exp: "11년차", stacks: ["AI자동화", "GPT", "n8n"] },
-            ].map(({ seed, name, age, exp, stacks }, i) => (
-              <Reveal key={name} delay={i * 0.06}>
-                <div style={{ background: "#fff", borderRadius: 20, padding: "24px 20px", border: "1px solid #efefef", boxShadow: "0 2px 12px rgba(0,0,0,.04)", transition: "transform .2s,box-shadow .2s" }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,0,0,.1)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 2px 12px rgba(0,0,0,.04)"; }}>
-                  <img src={`https://api.dicebear.com/7.x/notionists/svg?seed=${seed}&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf`}
-                    alt={name} width={64} height={64}
-                    style={{ borderRadius: "50%", marginBottom: 12, display: "block", background: "#f5f5f5" }} />
-                  <div style={{ fontSize: 17, fontWeight: 800, color: "#0a0a0a", marginBottom: 4 }}>{name}</div>
-                  <div style={{ fontSize: 13, color: "#888", marginBottom: 12 }}>{age}세 | 경력 : {exp}</div>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
-                    {stacks.map(s => (
-                      <span key={s} style={{ fontSize: 11, color: "#555", background: "#f5f5f5", border: "1px solid #eee", padding: "3px 9px", borderRadius: 8, fontWeight: 500 }}>{s}</span>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
+         
+         
       </section>
 
 
