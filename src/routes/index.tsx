@@ -420,31 +420,62 @@ function Index() {
         </div>
       </section>
 
+
       {/* TEAM */}
       <section id="team" className="sg" style={{ padding: "120px 24px" }}>
+        <style>{`
+          .team-roles{ grid-template-columns: repeat(3, 1fr); }
+          .team-stats{ flex-direction: row; }
+          @media(max-width:768px){
+            .team-roles{ grid-template-columns: 1fr; }
+            .team-stats{ flex-direction: column; }
+            .team-stats > div{ border-right: none !important; border-bottom: 1px solid #efefef; }
+            .team-stats > div:last-child{ border-bottom: none; }
+          }
+        `}</style>
+
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal center>
             <p style={{ fontSize: 13, fontWeight: 700, color: "#059669", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 16, textAlign: "center" }}>팀</p>
-            <h2 style={{ fontSize: "clamp(28px,4.5vw,52px)", fontWeight: 900, letterSpacing: "-.04em", lineHeight: 1.1, color: "#0a0a0a", marginBottom: 24, textAlign: "center" }}>
-              바로 투입 가능한<br />개발 인력들이 대기하고 있습니다
+            <h2 style={{ fontSize: "clamp(26px,4.5vw,48px)", fontWeight: 900, letterSpacing: "-.04em", lineHeight: 1.15, color: "#0a0a0a", marginBottom: 24, textAlign: "center" }}>
+              10년 이상 경력의<br />시니어 개발자들이 직접 만듭니다
             </h2>
-            <p style={{ fontSize: "clamp(14px,2vw,16px)", color: "#888", lineHeight: 1.7, textAlign: "center", maxWidth: 480, margin: "0 auto 64px" }}>
-              실무 경험 10년 이상의 시니어급 개발자들이<br />직접 프로젝트를 담당합니다
+            <p style={{ fontSize: "clamp(14px,2vw,16px)", color: "#888", lineHeight: 1.7, textAlign: "center", maxWidth: 520, margin: "0 auto 56px" }}>
+              대기업 SI부터 자체 서비스 출시까지<br />실무로 검증된 개발자들이 프로젝트를 담당합니다
             </p>
           </Reveal>
 
           {/* 신뢰 수치 */}
           <Reveal>
-            <div style={{ display: "flex", gap: 0, marginBottom: 48, borderRadius: 20, overflow: "hidden", border: "1px solid #efefef" }}>
-              {[["10년+", "평균 경력"], ["풀스택", "웹·앱·AI 전부"], ["즉시 투입", "대기 가능"]].map(([v, l], i) => (
-                <div key={v} style={{ flex: 1, padding: "28px 20px", textAlign: "center", background: i === 1 ? "#0a0a0a" : "#fff", borderRight: i < 2 ? "1px solid #efefef" : "none" }}>
-                  <div style={{ fontSize: "clamp(20px,3vw,28px)", fontWeight: 900, color: i === 1 ? "#7eecd4" : "#0a0a0a", letterSpacing: "-.03em", marginBottom: 6 }}>{v}</div>
-                  <div style={{ fontSize: 13, color: i === 1 ? "rgba(255,255,255,.5)" : "#888" }}>{l}</div>
+            <div className="team-stats" style={{ display: "flex", borderRadius: 20, overflow: "hidden", border: "1px solid #efefef", marginBottom: 48 }}>
+              {[["10년+", "평균 실무 경력", false], ["풀스택", "웹·앱·AI 전부", true], ["기획~운영", "전 과정 대응", false]].map(([v, l, dark]) => (
+                <div key={v as string} style={{ flex: 1, padding: "28px 16px", textAlign: "center", background: dark ? "#0a0a0a" : "#fff", borderRight: "1px solid #efefef" }}>
+                  <div style={{ fontSize: "clamp(18px,3vw,26px)", fontWeight: 900, color: dark ? "#7eecd4" : "#0a0a0a", letterSpacing: "-.03em", marginBottom: 6 }}>{v}</div>
+                  <div style={{ fontSize: 13, color: dark ? "rgba(255,255,255,.5)" : "#888" }}>{l}</div>
                 </div>
               ))}
             </div>
           </Reveal>
 
+          {/* 역할 카드 */}
+          <div className="team-roles" style={{ display: "grid", gap: 16 }}>
+            {[
+              { ico: "🧩", title: "기획 · PM", exp: "경력 20년+", desc: "대규모 시스템 설계와 프로젝트 총괄. 무엇을 어떤 순서로 만들지 함께 정리합니다." },
+              { ico: "⚙️", title: "백엔드 · 설계", exp: "경력 15년+", desc: "실무경험 기반의 안정적인 서버와 데이터 구조. 대기업 운영 시스템 경험." },
+              { ico: "🎨", title: "프론트 · 앱", exp: "경력 8년+", desc: "웹·모바일 화면 개발과 UX. 사용자가 실제로 편하게 쓰는 결과물을 만듭니다." },
+            ].map(({ ico, title, exp, desc }, i) => (
+              <Reveal key={title} delay={i * 0.08}>
+                <div style={{ background: "#fff", border: "1px solid #efefef", borderRadius: 18, padding: "32px 26px", height: "100%" }}>
+                  <div style={{ width: 48, height: 48, borderRadius: 12, background: "#f0fdf9", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, marginBottom: 18 }}>{ico}</div>
+                  <div style={{ fontSize: 18, fontWeight: 800, color: "#0a0a0a", marginBottom: 6 }}>{title}</div>
+                  <div style={{ fontSize: 13, color: "#059669", fontWeight: 700, marginBottom: 12 }}>{exp}</div>
+                  <div style={{ fontSize: 13.5, color: "#666", lineHeight: 1.7 }}>{desc}</div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
          
          
       </section>
