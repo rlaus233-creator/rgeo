@@ -731,7 +731,7 @@ function Index() {
             <div style={{ fontSize: 15, fontWeight: 900, color: "#fff", marginBottom: 4 }}>RGEO Labs(알지오랩스)</div>
             <div style={{ fontSize: 13, color: "rgba(255,255,255,.3)" }}>hello@rgeo.ai · rgeo.ai</div>
           </div>
-          <div style={{ fontSize: 12, color: "rgba(255,255,255,.2)" }}>© 2025 RGEO Labs. All rights reserved.</div>
+          <div style={{ fontSize: 12, color: "rgba(255,255,255,.2)" }}>© 2026 RGEO Labs. All rights reserved.</div>
         </div>
       </footer>
 
