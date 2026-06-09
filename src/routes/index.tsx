@@ -541,7 +541,7 @@ function Index() {
         </div>
       </section>
 
-      {/* ⬇️ 이 전체를 복사해서, TEAM 섹션의 </section> 다음 줄 ~ PRICING의 <section id="pricing"> 앞에 붙여넣으세요 */}
+      {/* */}
 
       <section className="sb" style={{ padding: "120px 24px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
@@ -559,7 +559,7 @@ function Index() {
           </Reveal>
 
           <Reveal center delay={0.1}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 1, borderRadius: 20, overflow: "hidden", border: "1px solid rgba(255,255,255,.08)", background: "rgba(255,255,255,.08)" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 1, borderRadius: 20, overflow: "hidden", border: "1px solid rgba(255,255,255,.08)", background: "rgba(255,255,255,.08)" }}>
               {[
                 { name: "삼성전자", projects: "금형관리시스템 · 갤럭시스토어 셀러포털 · 광고플랫폼 · 반도체 생산관리" },
                 { name: "SK하이닉스", projects: "반도체 생산운영시스템 고도화 · 투자관리(ITIM) · 부품생애관리(BOM)" },
