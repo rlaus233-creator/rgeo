@@ -596,36 +596,47 @@ function Index() {
         </div>
       </section>
 
- 
 
-      {/* SOLUTION CASES */}
       <section className="sb" style={{ padding: "120px 24px" }}>
         <style>{`
-          .sol-grid{ grid-template-columns: repeat(3, 1fr); }
-          @media(max-width:768px){ .sol-grid{ grid-template-columns: 1fr; } }
+          .boat-grid{ grid-template-columns: repeat(2, 1fr); }
+          @media(max-width:768px){ .boat-grid{ grid-template-columns: 1fr; } }
         `}</style>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <Reveal>
-            <p style={{ fontSize: 13, fontWeight: 700, color: "#7eecd4", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 16 }}>우리가 하는 일</p>
-            <h2 style={{ fontSize: "clamp(28px,4vw,50px)", fontWeight: 900, letterSpacing: "-.04em", lineHeight: 1.12, color: "#fff", marginBottom: 56 }}>
-              이런 고민, 이렇게 풉니다
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <Reveal center>
+            <p style={{ fontSize: 13, fontWeight: 700, color: "#7eecd4", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 20, textAlign: "center" }}>초기 개발비 0원</p>
+            <h2 style={{ fontSize: "clamp(26px,4.2vw,46px)", fontWeight: 900, letterSpacing: "-.04em", lineHeight: 1.25, color: "#fff", marginBottom: 18, textAlign: "center" }}>
+              시작은 0원,<br /><span style={{ color: "#7eecd4" }}>같은 배를 탑니다</span>
             </h2>
+            <p style={{ fontSize: "clamp(14px,2vw,16px)", color: "rgba(255,255,255,.45)", lineHeight: 1.7, textAlign: "center", maxWidth: 480, margin: "0 auto 52px" }}>
+              초기 비용을 안 받는 건, 잘돼야 우리도 가기 때문입니다
+            </p>
           </Reveal>
-          <div className="sol-grid" style={{ display: "grid", gap: 20 }}>
-            {[
-              { tag: "외주 실패", prob: "\"외주를 두 번 날렸어요\"", sol: "남이 만들다 만 코드도 인수해서 안정화합니다. 연락 끊길 걱정 없이, 월 단위로 계속 함께 갑니다." },
-              { tag: "채용 한계", prob: "\"개발자 채용이 6개월째 막혔어요\"", sol: "채용 없이 바로 시작합니다. 연봉·4대보험 부담 없이, 필요한 만큼 월 단위로 유연하게 대응합니다." },
-              { tag: "운영 막힘", prob: "\"바이브코딩으로 만들었는데 운영이 안 돼요\"", sol: "빠르게 만든 결과물을 실제 운영 가능한 구조로 다듬습니다. 버그 수정, 확장, 배포까지 이어받습니다." },
-            ].map(({ tag, prob, sol }, i) => (
-              <Reveal key={tag} delay={i * 0.1}>
-                <div style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.08)", borderRadius: 20, padding: "32px 28px", height: "100%" }}>
-                  <span style={{ display: "inline-block", fontSize: 12, fontWeight: 700, color: "#7eecd4", background: "rgba(126,236,212,.1)", padding: "6px 14px", borderRadius: 100, marginBottom: 20 }}>{tag}</span>
-                  <div style={{ fontSize: 19, fontWeight: 800, color: "#fff", lineHeight: 1.4, marginBottom: 16 }}>{prob}</div>
-                  <div style={{ color: "#7eecd4", fontSize: 18, marginBottom: 12 }}>↓</div>
-                  <div style={{ fontSize: 14, color: "rgba(255,255,255,.55)", lineHeight: 1.8 }}>{sol}</div>
+
+          <div className="boat-grid" style={{ display: "grid", gap: 16 }}>
+            <Reveal delay={0}>
+              <div style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.08)", borderRadius: 20, padding: "32px 28px", display: "flex", alignItems: "flex-start", gap: 18, height: "100%" }}>
+                <div style={{ width: 46, height: 46, borderRadius: 12, background: "rgba(126,236,212,.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#7eecd4", flexShrink: 0 }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
                 </div>
-              </Reveal>
-            ))}
+                <div>
+                  <div style={{ fontSize: 18, fontWeight: 800, color: "#fff", marginBottom: 7, letterSpacing: "-.02em" }}>부담 없는 시작</div>
+                  <div style={{ fontSize: 14, color: "rgba(255,255,255,.5)", lineHeight: 1.65 }}>선불 없이 가볍게 시작해 아이디어부터 검증합니다.</div>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.08)", borderRadius: 20, padding: "32px 28px", display: "flex", alignItems: "flex-start", gap: 18, height: "100%" }}>
+                <div style={{ width: 46, height: 46, borderRadius: 12, background: "rgba(126,236,212,.1)", display: "flex", alignItems: "center", justifyContent: "center", color: "#7eecd4", flexShrink: 0 }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                </div>
+                <div>
+                  <div style={{ fontSize: 18, fontWeight: 800, color: "#fff", marginBottom: 7, letterSpacing: "-.02em" }}>출시 후가 진심</div>
+                  <div style={{ fontSize: 14, color: "rgba(255,255,255,.5)", lineHeight: 1.65 }}>당신이 성장해야 구독도 이어집니다. 그래서 끝까지 함께합니다.</div>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
