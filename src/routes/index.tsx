@@ -197,7 +197,7 @@ function Index() {
            <Reveal center delay={0.3}>
           <div style={{ display:"flex",gap:12,flexWrap:"wrap",justifyContent:"center",marginBottom:64 }}>
             <a href="#apply" className="btn-dark">무료 상담 신청 →</a>
-            <a href="http://pf.kakao.com/_HyuxjX/chat" className="btn-outline" target="_blank" rel="noreferrer" style={{ display:"inline-flex",alignItems:"center",gap:8 }}>
+            <a href="http://pf.kakao.com/_VxlQrX/chat" className="btn-outline" target="_blank" rel="noreferrer" style={{ display:"inline-flex",alignItems:"center",gap:8 }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.477 3 2 6.477 2 10.667c0 2.676 1.82 5.028 4.56 6.365L5.5 21l4.215-2.31c.74.105 1.503.16 2.285.16 5.523 0 10-3.477 10-7.667S17.523 3 12 3z"/></svg>
               카카오톡 상담
             </a>
@@ -714,7 +714,7 @@ function Index() {
           </Reveal>
           <Reveal center delay={0.2}>
             <div style={{ marginTop:24,display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
-              <a href="http://pf.kakao.com/_HyuxjX/chat" target="_blank" rel="noreferrer"
+              <a href="http://pf.kakao.com/_VxlQrX/chat" target="_blank" rel="noreferrer"
                 style={{ display:"inline-flex",alignItems:"center",gap:8,background:"#FEE500",color:"#191919",fontWeight:800,fontSize:14,padding:"12px 24px",borderRadius:100,textDecoration:"none" }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.477 3 2 6.477 2 10.667c0 2.676 1.82 5.028 4.56 6.365L5.5 21l4.215-2.31c.74.105 1.503.16 2.285.16 5.523 0 10-3.477 10-7.667S17.523 3 12 3z"/></svg>
                 카카오톡 상담하기
@@ -729,7 +729,7 @@ function Index() {
       </section>
 
       {/* 카카오 퀵버튼 (모바일) */}
-      <a href="http://pf.kakao.com/_HyuxjX/chat" target="_blank" rel="noreferrer"
+      <a href="http://pf.kakao.com/_VxlQrX/chat" target="_blank" rel="noreferrer"
         style={{ position:"fixed",bottom:24,right:24,zIndex:300,display:"flex",alignItems:"center",justifyContent:"center",width:56,height:56,borderRadius:"50%",background:"#FEE500",boxShadow:"0 4px 20px rgba(0,0,0,.2)",textDecoration:"none" }}
         className="kakao-quick">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.477 3 2 6.477 2 10.667c0 2.676 1.82 5.028 4.56 6.365L5.5 21l4.215-2.31c.74.105 1.503.16 2.285.16 5.523 0 10-3.477 10-7.667S17.523 3 12 3z"/></svg>
