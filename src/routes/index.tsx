@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useRef, type ReactNode } from "react";
 
+<meta name="google-site-verification" content="m0Xx__MF29pCnb8p18mpAq9YZ3qzXto84oxB5pbW_fE" />
+
 const faqs = [
   { q: "RGEO Labs(알지오랩스)는 어떤 회사인가요?", a: "RGEO Labs(알지오랩스)는 개발자 채용 없이 웹·앱·AI 서비스를 시작할 수 있도록 돕는 AI 시대의 기술 운영 파트너입니다. 월 구독형 개발 구조를 기반으로 초기 서비스 출시의 문턱을 낮추고 빠른 MVP 검증이 가능하도록 설계합니다. 웹사이트 제작, 앱 개발, 유지보수, AI 자동화, GEO·SEO 최적화까지 하나의 팀으로 함께합니다." },
   { q: "GEO란 무엇인가요?", a: "GEO(Generative Engine Optimization)는 ChatGPT·Perplexity·Google AI 같은 생성형 AI 검색 환경에서 브랜드와 서비스가 더 잘 이해되고 언급될 수 있도록 구조화하는 최적화 방식입니다. SEO가 구글 검색 최적화라면, GEO는 AI 검색 최적화입니다." },
